@@ -7,8 +7,8 @@ export default class App extends Component {
       email: '',
       password: '',
     };
-  
-  
+
+
   onLogin() {
     const { email, password } = this.state;
 
@@ -26,8 +26,8 @@ export default class App extends Component {
           keyboardType = 'email-address'
           onChangeText={(email) => this.setState({ email })}
           placeholder='example@ucsd.edu'
-          placeholderTextColor = 'black'
-          style={styles.input}
+          placeholderTextColor = 'grey'
+          style={styles.input1}
         />
         <Text style={styles.textBox}>Password:</Text>
         <TextInput
@@ -35,25 +35,25 @@ export default class App extends Component {
           onChangeText={(password) => this.setState({ password })}
           placeholder={'example'}
           secureTextEntry={true}
-          placeholderTextColor = 'black'
-          style={styles.input}
+          placeholderTextColor = 'grey'
+          style={styles.input2}
         />
-        
-     
+
+
         <TouchableOpacity
           style={styles.button1}
           onPress={this.onLogin.bind(this)}
        >
-         <Text style={styles.buttonText}> Sign Up / Login </Text>
+         <Text style={styles.buttonText1}>Sign Up / Login</Text>
        </TouchableOpacity>
 
        <TouchableOpacity
           style={styles.button2}
           onPress={this.onLogin.bind(this)}
        >
-         <Text style={styles.buttonText}> Forgot Password </Text>
+         <Text style={styles.buttonText2}>Forget Password</Text>
        </TouchableOpacity>
-        
+
       </View>
       </KeyboardAvoidingView>
     );
@@ -71,13 +71,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   textBox: {
-    fontFamily: 'Baskerville',
+    fontFamily: 'Roboto',
     fontSize: 30,
     alignItems: 'center',
     justifyContent: 'center',
   },
   titleText:{
-    fontFamily: 'Baskerville',
+    fontFamily: 'Roboto',
     fontSize: 50,
     alignItems: 'center',
     justifyContent: 'center',
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'powderblue',
     width: 200,
-    height: 44,
+    height: 60,
     padding: 10,
     borderWidth: 1,
     borderColor: 'white',
@@ -104,20 +104,38 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginBottom: 10,
   },
-  buttonText:{
-    fontFamily: 'Baskerville',
-    fontSize: 20,
+  buttonText1:{
+    fontFamily: 'Roboto',
+    fontSize: 25,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  input: {
+  buttonText2:{
+    fontFamily: 'Roboto',
+    fontSize: 16,
+    textDecorationLine: 'underline',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  input1: {
     width: 200,
-    fontFamily: 'Baskerville',
+    fontFamily: 'Roboto',
+    fontSize: 20,
+    textAlign: 'left',
+    height: 44,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: 'purple',
+    marginVertical: 20,
+  },
+  input2: {
+    width: 200,
+    fontFamily: 'Roboto',
     fontSize: 20,
     height: 44,
     padding: 10,
     borderWidth: 1,
-    borderColor: 'white',
-    marginVertical: 10,
+    borderColor: 'purple',
+    marginVertical: 20,
   },
 });
